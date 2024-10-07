@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#4b963c"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Dinheiro Faz Dinheiro"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp" />
+
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="110dp"
+        android:layout_height="83dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appName"
+        app:srcCompat="@drawable/porkito2" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Calculadora de Investimentos"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView5"
+        android:layout_marginTop="16dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/investmentInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Investimento Inicial (R$)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/investmentInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/monthlyInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Aporte Mensal (R$)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/investmentInputLayout"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/monthlyInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/interestRateInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Taxa de Juros Anual (%)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/monthlyInputLayout"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/interestRateInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inflationInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Inflação Anual (%)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/interestRateInputLayout"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inflationInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/periodInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Período de Investimento (anos)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inflationInputLayout"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/periodInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/black"
+        android:text="Calcular"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_background_calculate"
+        android:textStyle="bold"
+        android:elevation="4dp"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/periodInputLayout"
+        android:layout_marginTop="32dp" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Apagar"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_background_clear"
+        android:textStyle="bold"
+        android:elevation="4dp"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculateButton"
+        android:layout_marginTop="16dp" />
+
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Resultado: R$ 0,00"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clearButton"
+        android:layout_marginTop="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
